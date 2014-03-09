@@ -37,6 +37,7 @@ group :development do
   gem 'quiet_assets'
 end
 
+gem 'feed_parser'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -47,4 +48,4 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
