@@ -1,4 +1,8 @@
 ChuvsuServer::Application.routes.draw do
+  resources :news_items
+
+  get 'news/last' => 'news_items#last'
+
   resources :articles
 
   # The priority is based upon order of creation: first created -> highest priority.
