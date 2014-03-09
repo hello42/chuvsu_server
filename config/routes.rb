@@ -1,4 +1,5 @@
 ChuvsuServer::Application.routes.draw do
+  get "home/welcome"
   resources :news_items
 
   get 'news/last' => 'news_items#last'
@@ -10,6 +11,7 @@ ChuvsuServer::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root 'home#welcome'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
