@@ -4,7 +4,7 @@ class NewsItem < ActiveRecord::Base
   #validates :url, presence: true
 
 
-  def self.update
+  def self.update_news
     url = "http://www.chuvsu.ru/index.php?option=com_content&view=section&layout=blog&id=97&Itemid=139&format=feed&type=rss"
     rss_feed = parse_rss url
     rss_feed.items.each do |item|
