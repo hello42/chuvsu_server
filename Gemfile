@@ -50,12 +50,15 @@ gem 'feed_parser'
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+group :devepment do
+  gem 'capistrano'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-rbenv', '~> 2.0'
+end
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
 gem 'whenever', :require => false
-
