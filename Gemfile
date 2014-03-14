@@ -45,6 +45,7 @@ group :development do
 end
 
 gem 'feed_parser'
+#gem 'nokogiri'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
