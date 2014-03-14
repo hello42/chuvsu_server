@@ -8,6 +8,10 @@ gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+gem 'haml-rails'
+
+gem 'foundation-rails'
+
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -33,6 +37,9 @@ group :doc do
 end
 
 group :development do
+  gem 'erb2haml'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'seed_dump'
   gem 'quiet_assets'
 end
