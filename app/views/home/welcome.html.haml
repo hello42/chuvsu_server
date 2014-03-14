@@ -1,2 +1,15 @@
-%h1 Home#welcome
-%p Find me in app/views/home/welcome.html.erb
+.row
+  .small-5.large-5.columns
+    %h1 API
+    = link_to "documentation", "https://github.com/hello42/chuvsu_server/wiki/API"
+
+    %h2 TASK
+    = link_to "add task", "https://github.com/hello42/chuvsu_server/issues"
+
+%hr
+.row
+  .small-11.large-11.columns
+    All news:
+    - NewsItem.find_each do |item|
+      =link_to item.title, item.url
+
