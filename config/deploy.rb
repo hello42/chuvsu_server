@@ -62,20 +62,22 @@ namespace :deploy do
     end
   end
 
+
+  app_name = "chuvsu_server"
   desc 'Setup'
   task :setup do
     on roles(:all) do
       upload! 'config/database.example.yml',  "#{shared_path}/config/database.yml"
-      #upload! 'config/nginx.conf',  "#{shared_path}/config/nginx.conf"
-      #upload! 'config/unicorn.rb',  "#{shared_path}/config/unicorn.rb"
-      #upload! 'config/unicorn_init.sh',  "#{shared_path}/config/unicorn_init.sh"
+      upload! 'config/nginx.conf',  "#{shared_path}/config/nginx.conf"
+      upload! 'config/unicorn.rb',  "#{shared_path}/config/unicorn.rb"
+      upload! 'config/unicorn_init.sh',  "#{shared_path}/config/unicorn_init.sh"
 
+      sudo "ln -ndf #{shared_path}/config/nginx.conf /etc/nginx/site-enabled/#{app_name}"
+      sudo "ln -ndf #{shared_path}/config/nginx.conf /etc/nginx/site-enabled/#{app_name}"
+      #ln -nfs unicorn
+      #ln -nfs nginx
 
       #sudo "ln -nfs #{shared_path}/config/nginx.conf /etc/nginx/sites-enabled/chuvsu_app"
-      #sudo "ln -nfs #{shared_path}/config/nginx.conf /etc/nginx/sites-enabled/chuvsu_app"
-
-
-
     end
       ##execute "mkdir  #{shared_path}/config/"
       ##sudo "ln -s /var/log/upstart /var/www/log/upstart"

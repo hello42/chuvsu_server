@@ -198,6 +198,7 @@ DEPENDENCIES
   feed_parser
   foundation-rails
   haml-rails
+  i18n
   jbuilder (~> 1.2)
   jquery-rails
   quiet_assets
