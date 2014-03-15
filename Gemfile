@@ -9,6 +9,7 @@ gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'haml-rails'
+gem 'i18n'
 
 gem 'foundation-rails'
 
@@ -45,16 +46,20 @@ group :development do
 end
 
 gem 'feed_parser'
+#gem 'nokogiri'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-gem 'unicorn'
+#gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+group :devepment do
+  gem 'capistrano'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-rbenv', '~> 2.0'
+end
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
 gem 'whenever', :require => false
-

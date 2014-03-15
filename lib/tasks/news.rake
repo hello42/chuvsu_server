@@ -4,5 +4,4 @@ namespace :news do
     NewsItem.update_news
     p "finished"
   end
-
 end
