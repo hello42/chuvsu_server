@@ -11,7 +11,7 @@ class NewsItem < ActiveRecord::Base
   end
 
   def self.update_news
-    url = "http://www.chuvsu.ru/index.php?option=com_content&view=section&layout=blog&id=97&Itemid=139&format=feed&type=rss"
+    url = "http://www.chuvsu.ru/index.php?option=com_content&view=section&layout=blog&id=222&format=feed&type=rss"
     rss_feed = parse_rss url
     rss_feed.items.reverse.each do |item|
       NewsItem.create title: item.title, image: get_image(item), body: clear_html(item.description), url: item.link unless is_dublicate?(item.link)

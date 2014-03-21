@@ -93,5 +93,5 @@ namespace :deploy do
         #with rails_env: fetch(:rails_env) do
           #execute :rake, "db:create"
         #end
-    end
+  end
 end
