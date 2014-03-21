@@ -7,7 +7,7 @@ set :repo_url, 'git@github.com:hello42/chuvsu_server.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
-set :branch, "deploy"
+set :branch, "dev"
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/deploy/apps/chuvsu_server'
