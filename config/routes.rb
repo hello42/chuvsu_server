@@ -1,4 +1,6 @@
 ChuvsuServer::Application.routes.draw do
+  resources :facults
+
   get "home/welcome"
   resources :news_items
 

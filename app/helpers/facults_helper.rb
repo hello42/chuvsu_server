@@ -1,0 +1,2 @@
+module FacultsHelper
+end

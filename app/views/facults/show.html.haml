@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @facult.name
+%p
+  %b Logo:
+  = @facult.logo
+%p
+  %b Info:
+  = @facult.info
+
+= link_to 'Edit', edit_facult_path(@facult)
+\|
+= link_to 'Back', facults_path
