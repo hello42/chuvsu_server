@@ -4,6 +4,7 @@ set :rbenv_ruby, '2.1.1'
 set :application, 'chuvsu_server'
 set :repo_url, 'git@github.com:hello42/chuvsu_server.git'
 
+
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 set :branch, "dev"
@@ -21,7 +22,9 @@ set :scm, :git
 set :log_level, :debug
 
 # Default value for :pty is false
-# set :pty, true
+set :pty, true
+set :use_sudo, true
+
 
 # Default value for :linked_files is []
 set :linked_files, %w{config/database.yml config/unicorn.rb}
@@ -49,9 +52,6 @@ namespace :deploy do
   end
 
   after :publishing, :restart
-  #after :publishing, :restart
-
-  after :publishing, :restart
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -63,7 +63,6 @@ namespace :deploy do
   end
 
 
-  app_name = "chuvsu_server"
   desc 'Setup'
   task :setup do
     on roles(:all) do
@@ -71,14 +70,15 @@ namespace :deploy do
       upload! 'config/nginx.conf',  "#{shared_path}/config/nginx.conf"
       upload! 'config/unicorn.rb',  "#{shared_path}/config/unicorn.rb"
       upload! 'config/unicorn_init.sh',  "#{shared_path}/config/unicorn_init.sh"
+    end
 
-      sudo "ln -ndf #{shared_path}/config/nginx.conf /etc/nginx/site-enabled/#{app_name}"
-      sudo "ln -ndf #{shared_path}/config/nginx.conf /etc/nginx/site-enabled/#{app_name}"
+      #sudo "ln -s #{shared_path}/config/nginx.conf /etc/nginx/sites-enabled/chuvsu"
+      #sudo "ln -s #{shared_path}/unicorn_init.sh /etc/init.d/unicorn_chuvsu"
+      #sudo "ln -ndf #{shared_path}/config/nginx.conf /etc/nginx/site-enabled/#{app_name}"
+      #sudo "ln -ndf #{shared_path}/config/nginx.conf /etc/nginx/site-enabled/#{app_name}"
       #ln -nfs unicorn
       #ln -nfs nginx
-
       #sudo "ln -nfs #{shared_path}/config/nginx.conf /etc/nginx/sites-enabled/chuvsu_app"
-    end
       ##execute "mkdir  #{shared_path}/config/"
       ##sudo "ln -s /var/log/upstart /var/www/log/upstart"
       #upload!('shared/database.yml', "#{shared_path}/config/database.yml")
