@@ -22,12 +22,12 @@ set :scm, :git
 set :log_level, :debug
 
 # Default value for :pty is false
-set :pty, true
-set :use_sudo, true
+#set :pty, true
+#set :use_sudo, true
 
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml config/unicorn.rb}
+set :linked_files, %w{config/database.yml}
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
@@ -64,13 +64,27 @@ namespace :deploy do
 
 
   desc 'Setup'
-  task :setup do
-    on roles(:all) do
+  task :setup do |host|
+    invoke "#{scm}:check"
+    invoke 'deploy:check:directories'
+    invoke 'deploy:check:linked_dirs'
+    invoke 'deploy:check:make_linked_dirs'
+    invoke 'deploy:upload_config_file'
+    #TODO: render config_file
+    #"configure db file"
+    #make psql db, user
+    invoke :deploy
+  end
+
+  desc 'upload database, unicorn, unicorn_init file, nginx. After this command need ln -nfs (nginx, /etc/init.d/) '
+  task :upload_config_file do
+    on roles(:all) do |host|
       upload! 'config/database.example.yml',  "#{shared_path}/config/database.yml"
       upload! 'config/nginx.conf',  "#{shared_path}/config/nginx.conf"
       upload! 'config/unicorn.rb',  "#{shared_path}/config/unicorn.rb"
       upload! 'config/unicorn_init.sh',  "#{shared_path}/config/unicorn_init.sh"
     end
+  end
 
       #sudo "ln -s #{shared_path}/config/nginx.conf /etc/nginx/sites-enabled/chuvsu"
       #sudo "ln -s #{shared_path}/unicorn_init.sh /etc/init.d/unicorn_chuvsu"
@@ -93,5 +107,4 @@ namespace :deploy do
         #with rails_env: fetch(:rails_env) do
           #execute :rake, "db:create"
         #end
-  end
 end
