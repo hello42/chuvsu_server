@@ -19,9 +19,8 @@ set :branch, 'dev'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'log', 'config/nginx.conf', 'config/unicorn.rb', 'config/unicorn_init.sh' ]
-#TODO:
-#bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system
+set :shared_paths, ['config/database.yml', 'log', 'config/nginx.conf', 'config/unicorn.rb', 'config/unicorn_init.sh', 'tmp/pids']
+                    #'bin', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system']
 
 set :user, 'deploy'
 # Optional settings:
@@ -42,6 +41,8 @@ end
 # Put any custom mkdir's in here for when `mina setup` is ran.
 # For Rails apps, we'll make some of the shared paths that are shared between
 # all releases.
+#set :shared_paths, ['config/database.yml', 'log', 'config/nginx.conf', 'config/unicorn.rb', 'config/unicorn_init.sh',
+                    #'bin', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system']
 task :setup => :environment do
   queue! %[mkdir -p "#{deploy_to}/shared/log"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/log"]
@@ -49,7 +50,10 @@ task :setup => :environment do
   queue! %[mkdir -p "#{deploy_to}/shared/config"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/config"]
 
-  queue! %[touch "#{deploy_to}/shared/config/database.yml"]
+  queue! %[mkdir -p "#{deploy_to}/shared/tmp/pids"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/tmp/pids"]
+
+  invoke :upload_config
   queue  %[echo "-----> Be sure to edit 'shared/config/database.yml'."]
 end
 
@@ -74,6 +78,7 @@ task :deploy => :environment do
     invoke :'rails:assets_precompile'
 
     to :launch do
+      queue "touch #{deploy_to}/tmp/restart.txt"
       queue "touch #{deploy_to}/tmp/restart.txt"
     end
   end

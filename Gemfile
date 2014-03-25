@@ -26,8 +26,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 
+gem 'sqlite3'
 group :development do
-  gem 'sqlite3'
   gem 'debugger'
   gem 'mina'
   gem 'mina-scp', require: false
