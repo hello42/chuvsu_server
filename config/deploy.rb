@@ -66,6 +66,17 @@ task :upload_config => :environment do
   scp_upload "config/unicorn_init.sh", "#{deploy_to}/shared/config/unicorn_init.sh"
 end
 
+
+desc "link file"
+task :linked_config => :environment do
+  queue "sudo ln -nfs #{deploy_to}/shared/config/nginx.conf /etc/nginx/sites-available/chuvsu"
+  queue "sudo ln -nfs #{deploy_to}/shared/config/unicorn_init.sh /etc/init.d/unicorn_chuvsu"
+
+end
+
+
+
+
 desc "Deploys the current version to the server."
 task :deploy => :environment do
   deploy do
