@@ -1,3 +1,21 @@
-// Place all the styles related to the facults controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.facult-item {
+  float: left;
+  background: #f7f7f7;
+  height: 250px;
+  width: 200px;
+  margin: 10px 25px;
+  padding: 1px;
+  text-align: center;
+  border: 1px solid #AAA;
+
+
+  .title {
+    background-color: #a8a8a8;
+    font-size: 17px;
+    padding: 5px 10px;
+  }
+
+  .url {}
+  .logo {}
+
+}

@@ -12,6 +12,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'feed_parser'
 gem 'whenever', :require => false
 
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

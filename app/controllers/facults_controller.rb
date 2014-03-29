@@ -69,6 +69,6 @@ class FacultsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def facult_params
-      params.require(:facult).permit(:name, :logo, :info)
+      params.require(:facult).permit(:name, :logo, :info, :url)
     end
 end

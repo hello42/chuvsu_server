@@ -1,21 +1,21 @@
-%h1 Listing facults
+%hr
 
-%table
-  %tr
-    %th Name
-    %th Logo
-    %th Info
-    %th
-    %th
+%h1
+  Расписание факультетов
 
-  - @facults.each do |facult|
-    %tr
-      %td=link_to facult.name, facult
-      %td= image_tag facult.logo
-      %td= facult.info
-      %td= link_to 'Edit', edit_facult_path(facult)
-      %td= link_to 'Destroy', facult, :method => :delete, :data => { :confirm => 'Are you sure?' }
+- @facults.each do |facult|
+  .facult-item
+    %h2.title
+      =link_to facult.name, facult
+    .url
+      = link_to facult.url, facult.url
+    .logo
+      =image_tag facult.logo
 
-%br
+    = link_to 'Edit', edit_facult_path(facult)
+    = link_to 'Destroy', facult, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
+
+
+%hr
 = link_to 'New Facult', new_facult_path
