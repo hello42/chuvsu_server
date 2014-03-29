@@ -7,7 +7,10 @@ class NewsItem < ActiveRecord::Base
 
   def self.clear_html text
     result  = ApplicationController.helpers.strip_tags text
-    result.gsub /\{gallery\}[\S]*}/, ""
+    result.gsub!(/\{gallery\}[\S]*}/, "")
+    result.gsub!(/&nbsp;/, "")
+    result.delete!("\n\n")
+    result
   end
 
   def self.update_news
