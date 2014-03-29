@@ -3,9 +3,9 @@
 one:
   name: MyString
   facult_id: 1
-  info: MyString
+  info: MyText
 
 two:
   name: MyString
   facult_id: 1
-  info: MyString
+  info: MyText
