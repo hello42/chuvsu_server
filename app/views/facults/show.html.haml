@@ -4,9 +4,17 @@
 %h1
   = @facult.name
 
-%ul
-  - @facult.groups.each do |group|
-    %li=link_to group.name, group
+
+
+- if @facult.groups.empty?
+  %h1
+    Групп нет
+- else
+  %h1
+    Группы
+  %ul
+    - @facult.groups.each do |group|
+      %li=link_to group.name, group
 
 
 

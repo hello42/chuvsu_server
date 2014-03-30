@@ -1,19 +1,4 @@
 %p#notice= notice
-%dl.sub-nav
-  %dt
-    День недели
-  %dd.active
-    =link_to "Понедельник", "#"
-  %dd
-    =link_to "Вторник", "#"
-  %dd
-    =link_to "Среда", "#"
-  %dd
-    =link_to "Четверг", "#"
-  %dd
-    =link_to "Пятница", "#"
-  %dd
-    =link_to "Суббота", "#"
 
 %p
   %b Name:
@@ -21,9 +6,24 @@
 %p
   %b Facult:
   = @group.facult_id
-%p
-  %b Info:
-  = @group.info
+
+
+
+%h1
+  Расписание занятий
+
+%table.table
+  %thead
+    %tr
+      - %w( № пн вт ср чт пт сб).each do |day|
+        %td
+          = day
+  %tbody
+    - %w(1 2 3 4 5 6 ).each do |number|
+      %tr
+        %td
+          = number
+
 
 = link_to 'Edit', edit_group_path(@group)
 \|

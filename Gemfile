@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'sqlite3'
 group :development do
+  gem 'spring'
   gem 'debugger'
   gem 'mina'
   gem 'mina-scp', require: false
