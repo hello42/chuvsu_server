@@ -12,6 +12,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'feed_parser'
 gem 'whenever', :require => false
 
+gem 'simple_form'
+
 gem 'activeadmin', github: 'gregbell/active_admin'
 
 

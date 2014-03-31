@@ -1,4 +1,8 @@
 ChuvsuServer::Application.routes.draw do
+  resources :teachers
+
+  resources :subjects
+
   resources :groups
 
   devise_for :admin_users, ActiveAdmin::Devise.config

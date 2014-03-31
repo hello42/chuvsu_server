@@ -1,16 +1,13 @@
-= form_for @group do |f|
-  - if @group.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@group.errors.count, "error")} prohibited this group from being saved:"
-      %ul
-        - @group.errors.full_messages.each do |msg|
-          %li= msg
+.row
+  .small-11.large-11.columns
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :facult_id
-    = f.number_field :facult_id
-  .actions
-    = f.submit 'Save'
+    = simple_form_for @group do |f|
+      - if @group.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@group.errors.count, "error")} prohibited this group from being saved:"
+          %ul
+            - @group.errors.full_messages.each do |msg|
+              %li= msg
+      = f.input :name
+      = f.input :facult_id, as: :select, collection: Facult.all
+      = f.button :submit

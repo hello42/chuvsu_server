@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @subject.name
+%p
+  %b Number:
+  = @subject.number
+%p
+  %b Star:
+  = @subject.star
+%p
+  %b Teacher:
+  = @subject.teacher_id
+%p
+  %b Info:
+  = @subject.info
+
+= link_to 'Edit', edit_subject_path(@subject)
+\|
+= link_to 'Back', subjects_path

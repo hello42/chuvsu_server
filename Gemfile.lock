@@ -187,6 +187,9 @@ GEM
       activerecord
       activesupport
     sexp_processor (4.4.1)
+    simple_form (3.0.1)
+      actionpack (>= 4.0.0, < 4.1)
+      activemodel (>= 4.0.0, < 4.1)
     spring (1.1.2)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -245,6 +248,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sdoc
   seed_dump
+  simple_form
   spring
   sqlite3
   turbolinks

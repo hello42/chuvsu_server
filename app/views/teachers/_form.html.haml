@@ -1,0 +1,9 @@
+= simple_form_for(@teacher) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :info
+
+  .form-actions
+    = f.button :submit

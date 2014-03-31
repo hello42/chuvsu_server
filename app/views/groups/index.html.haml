@@ -6,13 +6,12 @@
     %th Facult
     %th
     %th
-    %th
 
   - @groups.each do |group|
     %tr
-      %td= group.name
-      %td= group.facult_id
-      %td= link_to 'Show', group
+      %td=link_to group.name, group
+      - facult = get_facult(group.facult_id)
+      %td=link_to facult.name, facult
       %td= link_to 'Edit', edit_group_path(group)
       %td= link_to 'Destroy', group, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
