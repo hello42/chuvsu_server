@@ -5,7 +5,7 @@
 
     %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
 
-    %title= content_for?(:title) ? yield(:title) : "Chuvsu"
+    %title=raw content_for?(:title) ? yield(:title) : "Chuvsu &mdash; Чувашский государственный университет имени И.Н. Ульянова"
 
     = stylesheet_link_tag "application"
     = csrf_meta_tag

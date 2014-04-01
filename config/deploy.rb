@@ -74,6 +74,13 @@ task :linked_config => :environment do
 
 end
 
+task :fix_libv8 => :environment do
+  deploy do
+    invoke :'rbenv:load'
+    queue "gem install libv8 -v '3.16.14.3'"
+    #queue "gem install libv8 -v '3.16.14.3' -- --with-system-v8"
+  end
+end
 
 
 
@@ -89,7 +96,6 @@ task :deploy => :environment do
     invoke :'rails:assets_precompile'
 
     to :launch do
-      queue "touch #{deploy_to}/tmp/restart.txt"
       queue "touch #{deploy_to}/tmp/restart.txt"
     end
   end
