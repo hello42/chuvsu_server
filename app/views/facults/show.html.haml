@@ -22,13 +22,8 @@
 
 
 %p
-  %b Name:
-  = @facult.name
+  =image_tag @facult.logo
 %p
-  %b Logo:
-  = @facult.logo
-%p
-  %b Info:
   = @facult.info
 
 = link_to 'Edit', edit_facult_path(@facult)

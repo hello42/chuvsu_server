@@ -1,21 +1,30 @@
-%hr
 
 %h1
   Расписание факультетов
 
-- @facults.each do |facult|
-  .facult-item
-    %h2.title
-      =link_to facult.name, facult
-    .url
-      = link_to facult.url, facult.url
-    .logo
-      =image_tag facult.logo
-
-    = link_to 'Edit', edit_facult_path(facult)
-    = link_to 'Destroy', facult, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-
-
 %hr
-= link_to 'New Facult', new_facult_path
+.btn-group
+  = link_to 'New Facult', new_facult_path, class: "btn"
+  = link_to 'New Group', new_group_path, class: "btn"
+
+.row
+  .center
+    -@facults.each do |facult|
+      .facult-item
+        .title
+          = link_to facult.name, facult
+        .body
+          .logo
+            = image_tag facult.logo
+          .btn-group
+            = link_to 'Edit', edit_facult_path(facult), class: "btn-mini"
+            = link_to 'Destroy', facult, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn-mini"
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+.navbar
+  .navbar-inner
+    = link_to "Главная", root_path, class: "brand"
+    %ul.nav
+
+      %li{:class => "#{'active' if current_page?(news_items_path)}"}
+        = link_to "Новости", news_items_path
+
+      %li{:class => "#{'active' if current_page?(facults_path)}"}
+        = link_to "Факультеты", facults_path
+
+      %li{:class => "#{'active' if current_page?(teachers_path)}"}
+        = link_to "Преподаватели", teachers_path
+

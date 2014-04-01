@@ -1,10 +1,14 @@
 %p#notice= notice
-%p
-  %strong Title:
+%h1
   = @news_item.title
+%p
+  = image_tag @news_item.image
 %p
   %strong Body:
   = @news_item.body
+%p
+  %strong url: 
+  = link_to @news_item.url, @news_item.url
 = link_to 'Edit', edit_news_item_path(@news_item)
 |
 \#{link_to 'Back', news_items_path}
