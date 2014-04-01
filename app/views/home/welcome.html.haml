@@ -1,21 +1,7 @@
-.row
-  .small-5.large-5.columns
-    %h1 API
-    = link_to "documentation", "https://github.com/hello42/chuvsu_server/wiki/API"
-
-    %h2 TASK
-    = link_to "add task", "https://github.com/hello42/chuvsu_server/issues"
-
-    %h2 Facults
-    = link_to "Show list", facults_path
-
-    %h2 Группы
-    = link_to "Show list", groups_path
-
-%hr
-.row
-  .small-11.large-11.columns
-    All news:
-    - NewsItem.find_each do |item|
-      =link_to item.title, item.url
+.columns.small-2.red
+  small-2
+.columns.small-2.red
+  small-2
+.columns.small-8.red
+  small-8
 
