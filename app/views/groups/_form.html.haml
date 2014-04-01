@@ -1,13 +1,12 @@
-.row
-  .small-11.large-11.columns
+= simple_form_for @group do |f|
+  - if @group.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@group.errors.count, "error")} prohibited this group from being saved:"
+      %ul
+        - @group.errors.full_messages.each do |msg|
+          %li= msg
 
-    = simple_form_for @group do |f|
-      - if @group.errors.any?
-        #error_explanation
-          %h2= "#{pluralize(@group.errors.count, "error")} prohibited this group from being saved:"
-          %ul
-            - @group.errors.full_messages.each do |msg|
-              %li= msg
-      = f.input :name
-      = f.input :facult_id, as: :select, collection: Facult.all
-      = f.button :submit
+  = f.input :facult_id, as: :select, collection: Facult.all, :include_blank => false
+  = f.input :name
+  %p
+    = f.button :submit
