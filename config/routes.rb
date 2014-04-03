@@ -1,20 +1,14 @@
 ChuvsuServer::Application.routes.draw do
   resources :teachers
-
   resources :subjects
-
   resources :groups
+  resources :facults
+  resources :news_items
+  resources :articles
+  get 'news/last' => 'news_items#last'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :facults
-
-  get "home/welcome"
-  resources :news_items
-
-  get 'news/last' => 'news_items#last'
-
-  resources :articles
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

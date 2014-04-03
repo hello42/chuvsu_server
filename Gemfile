@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'sqlite3'
 group :development do
+  gem 'annotate', '>=2.6.0'
   gem 'spring'
   gem 'debugger'
   gem 'mina'

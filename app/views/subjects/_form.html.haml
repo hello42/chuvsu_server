@@ -12,11 +12,17 @@
         = f.label :name
         = f.text_field :name
       .field
+        = f.label :day, "День недели: "
+        = f.select :day, [ ["Пн",1], [ "Вт",2], ["Ср", 3], ["Чт", 4], [ "Пт", 5], ["Сб", 6]]
+      .field
         = f.label :number, "Номер пары: "
         = f.select :number, (1..8)
       .field
         = f.label :star
         = f.select "star", [ ["*", 1], ["**", 2] ]
+      .field
+        = f.label :group_id
+        = f.select :group_id, Group.all.collect {|p| [p.name, p.id]}, {include_blank: false}
       .field
         = f.label :teacher_id
         = f.select "teacher_id", Teacher.all.collect {|p| [p.name, p.id]}, {include_blank: false}
