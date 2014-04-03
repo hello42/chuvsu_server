@@ -1,28 +1,31 @@
 %h1 Listing subjects
+- days = %w(0 Пн Вт Ср Чт Пт Сб Вс)
 
 %table
   %tr
     %th Name
     %th Number
+    %th Day
     %th Star
     %th Teacher
+    %th Group
     %th Info
-    %th
     %th
     %th
 
   - @subjects.each do |subject|
     %tr
-      %td= subject.name
+      %td=link_to subject.name, subject
       %td= subject.number
+      %td= days[subject.day]
       %td= "*" * subject.star
       - teacher = Teacher.find(subject.teacher_id)
       %td= link_to teacher.name, teacher
+      - group = Group.find(subject.group_id)
+      %td=link_to group.name, group
       %td= subject.info
-      %td= link_to 'Show', subject
       %td= link_to 'Edit', edit_subject_path(subject)
       %td= link_to 'Destroy', subject, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
-
 = link_to 'New Subject', new_subject_path

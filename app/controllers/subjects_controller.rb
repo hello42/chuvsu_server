@@ -57,6 +57,6 @@ class SubjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subject_params
-      params.require(:subject).permit(:name, :number, :star, :teacher_id, :info)
+      params.require(:subject).permit(:name, :number, :star, :teacher_id, :info, :day, :group_id)
     end
 end
