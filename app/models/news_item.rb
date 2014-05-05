@@ -18,11 +18,11 @@ class NewsItem < ActiveRecord::Base
   validates :body, presence: true
   validates :url, presence: true
 
-  def self.clear_html text
-    result  = ApplicationController.helpers.strip_tags text
+  def self.clear_html html_text
+    result  = ApplicationController.helpers.strip_tags html_text
     result.gsub!(/\{gallery\}[\S]*}/, "")
     result.gsub!(/&nbsp;/, "")
-    result.delete!("\n\n")
+    result.gsub!(/.*(\\n){2}/, "")
     result
   end
 

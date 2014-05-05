@@ -90,11 +90,4 @@ ActiveRecord::Schema.define(version: 20140403160954) do
     t.integer  "group_id"
   end
 
-  create_table "teachers", force: true do |t|
-    t.string   "name"
-    t.string   "info"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
