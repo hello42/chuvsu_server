@@ -12,3 +12,11 @@ install
   bundle install
   rake db:setup
   ```
+
+Task
+====
+
+  * последние новости
+  * url у новости
+  * абитуриент
+

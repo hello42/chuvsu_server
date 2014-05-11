@@ -8,7 +8,7 @@ class NewsItemsController < ApplicationController
   end
 
   def last
-    @news_items = NewsItem.all
+    @news_items = NewsItem.last(30)
   end
 
   # GET /news_items/1
