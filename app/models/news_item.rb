@@ -20,9 +20,9 @@ class NewsItem < ActiveRecord::Base
 
   def self.clear_html html_text
     result  = ApplicationController.helpers.strip_tags html_text
+    result = result.sub( /\A.*\n\n/, "")
     result.gsub!(/\{gallery\}[\S]*}/, "")
     result.gsub!(/&nbsp;/, "")
-    result.gsub!(/.*(\\n){2}/, "")
     result
   end
 
