@@ -3,6 +3,9 @@
     = link_to "Главная", root_path, class: "brand"
     %ul.nav
 
+      %li{:class => "#{'active' if current_page?(abiturients_path)}"}
+        = link_to "Абитуриент", abiturients_path
+
       %li{:class => "#{'active' if current_page?(news_items_path)}"}
         = link_to "Новости", news_items_path
 

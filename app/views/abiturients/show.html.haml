@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @abiturient.title
+%p
+  %b Body:
+  = @abiturient.body
+%p
+  %b Img:
+  = @abiturient.img
+%p
+  %b Url:
+  = @abiturient.url
+
+= link_to 'Edit', edit_abiturient_path(@abiturient)
+\|
+= link_to 'Back', abiturients_path

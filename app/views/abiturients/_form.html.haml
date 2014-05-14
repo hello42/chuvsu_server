@@ -1,0 +1,11 @@
+= simple_form_for(@abiturient) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :body
+    = f.input :img
+    = f.input :url
+
+  .form-actions
+    = f.button :submit

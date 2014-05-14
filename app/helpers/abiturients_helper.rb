@@ -1,0 +1,2 @@
+module AbiturientsHelper
+end

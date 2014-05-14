@@ -1,0 +1,25 @@
+%h1 Listing abiturients
+
+%table
+  %tr
+    %th Title
+    %th Body
+    %th Img
+    %th Url
+    %th
+    %th
+    %th
+
+  - @abiturients.each do |abiturient|
+    %tr
+      %td= abiturient.title
+      %td= abiturient.body
+      %td= abiturient.img
+      %td= abiturient.url
+      %td= link_to 'Show', abiturient
+      %td= link_to 'Edit', edit_abiturient_path(abiturient)
+      %td= link_to 'Destroy', abiturient, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Abiturient', new_abiturient_path

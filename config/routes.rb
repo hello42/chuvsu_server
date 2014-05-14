@@ -1,4 +1,6 @@
 ChuvsuServer::Application.routes.draw do
+  resources :abiturients
+
   resources :teachers
   resources :subjects
   resources :groups
