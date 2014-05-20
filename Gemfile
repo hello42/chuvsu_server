@@ -47,7 +47,7 @@ end
 
 group :production do
   gem 'pg'
-  gem 'unicorn'
+  gem 'unicorn', '4.8.3'
 end
 
 group :doc do
