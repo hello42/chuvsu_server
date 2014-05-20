@@ -1,4 +1,4 @@
-root_path = "/var/www/chuvsu_server/current/"
+root_path = "/var/www/chuvsu/current/"
 
 working_directory root_path
 pid "#{root_path}/tmp/pids/unicorn.pid"
