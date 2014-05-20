@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'sqlite3'
 group :development do
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
   gem 'annotate', '>=2.6.0'
   gem 'spring'
   gem 'debugger'
