@@ -9,6 +9,8 @@ gem 'i18n' #delete?
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
+gem 'foreman'
+
 gem 'feed_parser'
 gem 'whenever', :require => false
 
