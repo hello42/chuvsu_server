@@ -9,6 +9,7 @@ APP_ROOT=/var/www/chuvsu/current
 PID=$APP_ROOT/tmp/pids/unicorn.pid
 CMD="unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
 action="$1"
+user="app"
 set -u
 
 old_pid="$PID.oldbin"
@@ -26,7 +27,7 @@ oldsig () {
 case $action in
 start)
 	sig 0 && echo >&2 "Already running" && exit 0
-	su -c "$CMD" - apps
+	su -c "$CMD" - $user
 	;;
 stop)
 	sig QUIT && exit 0
@@ -39,7 +40,7 @@ force-stop)
 restart|reload)
 	sig HUP && echo reloaded OK && exit 0
 	echo >&2 "Couldn't reload, starting '$CMD' instead"
-	su -c "$CMD" - apps
+	su -c "$CMD" - $user
 	;;
 upgrade)
 	if sig USR2 && sleep 2 && sig 0 && oldsig QUIT
@@ -59,7 +60,7 @@ upgrade)
 		exit 0
 	fi
 	echo >&2 "Couldn't upgrade, starting '$CMD' instead"
-	su -c "$CMD" - apps
+	su -c "$CMD" - $user
 	;;
 reopen-logs)
 	sig USR1
