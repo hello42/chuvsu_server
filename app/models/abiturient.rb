@@ -2,13 +2,14 @@
 #
 # Table name: abiturients
 #
-#  id         :integer          not null, primary key
-#  title      :string(255)
-#  body       :text
-#  img        :string(255)
-#  url        :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id           :integer          not null, primary key
+#  title        :string(255)
+#  body         :text
+#  img          :string(255)
+#  url          :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#  notification :boolean
 #
 
 class Abiturient < ActiveRecord::Base

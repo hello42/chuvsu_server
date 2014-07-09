@@ -4,6 +4,6 @@ class AbiturientsController < InheritedResources::Base
   protected
 
   def permitted_params
-    params.permit(:abiturient => [:title, :body, :url, :img])
+    params.permit(:abiturient => [:title, :body, :url, :img, :notification])
   end
 end

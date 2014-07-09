@@ -9,6 +9,7 @@
     %th
     %th
     %th
+    %th
 
   - @abiturients.each do |abiturient|
     %tr
@@ -16,6 +17,7 @@
       %td= abiturient.body
       %td= abiturient.img
       %td= abiturient.url
+      %td= abiturient.notification
       %td= link_to 'Show', abiturient
       %td= link_to 'Edit', edit_abiturient_path(abiturient)
       %td= link_to 'Destroy', abiturient, :method => :delete, :data => { :confirm => 'Are you sure?' }
