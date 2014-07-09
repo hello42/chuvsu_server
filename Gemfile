@@ -33,12 +33,11 @@ gem 'jbuilder', '~> 1.2'
 group :development do
   gem 'sqlite3'
   gem 'capistrano-rails'
+  gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
   gem 'annotate', '>=2.6.0'
   gem 'spring'
   gem 'debugger'
-  gem 'mina'
-  gem 'mina-scp', require: false
   gem 'erb2haml'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -47,9 +46,9 @@ group :development do
 end
 
 
+gem 'puma'
 group :production do
   gem 'pg'
-  gem 'unicorn', '4.8.3'
 end
 
 group :doc do
