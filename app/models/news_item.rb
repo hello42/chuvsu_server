@@ -55,7 +55,11 @@ private
     images = /(https?:\/\/[\S]+jpg)/i
     text = item.description
     result = text.scan images
-    result[0][0]
+    return standart_image if result.empty?
+    return result[0][0]
   end
 
+  def self.standart_image
+    "/standart/standart.jpg"
+  end
 end
