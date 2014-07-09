@@ -2,7 +2,7 @@
 lock '3.2.1'
 
 set :application, 'chuvsu'
-set :repo_url, 'git@github.com:hello42/chuvsu_server.git'
+set :repo_url, 'https://github.com/hello42/chuvsu_server.git'
 
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
