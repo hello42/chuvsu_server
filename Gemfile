@@ -8,19 +8,12 @@ gem 'twitter-bootstrap-rails'
 gem 'i18n' #delete?
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
-
 gem 'foreman'
-
 gem 'feed_parser'
 gem 'whenever', :require => false
-
 gem 'simple_form'
-
 gem 'activeadmin', github: 'gregbell/active_admin'
-
-
 gem 'therubyracer', platforms: :ruby
-
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -28,7 +21,6 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
 
 group :development do
   gem 'sqlite3'
