@@ -9,6 +9,7 @@ ChuvsuServer::Application.routes.draw do
   resources :articles
   get 'news/last' => 'news_items#last'
 
+  get 'error' => 'welcome/error'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
