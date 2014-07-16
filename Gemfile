@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
+gem 'airbrake'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
