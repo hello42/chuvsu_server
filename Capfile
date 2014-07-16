@@ -5,7 +5,8 @@ require 'capistrano/setup'
 require 'capistrano/deploy'
 require 'capistrano/puma'
 require 'whenever/capistrano'
-
+require './config/boot'
+require 'airbrake/capistrano'
 
 # Includes tasks from other gems included in your Gemfile
 #
