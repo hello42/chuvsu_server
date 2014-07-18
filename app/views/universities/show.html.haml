@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @university.title
+%p
+  %b Body:
+  = @university.body
+
+= link_to 'Edit', edit_university_path(@university)
+\|
+= link_to 'Back', universities_path
