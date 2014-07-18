@@ -1,0 +1,23 @@
+%h1 Listing addresses
+
+%table
+  %tr
+    %th Title
+    %th Address
+    %th Image
+    %th
+    %th
+    %th
+
+  - @addresses.each do |address|
+    %tr
+      %td= address.title
+      %td= address.address
+      %td=image_tag address.image
+      %td= link_to 'Show', address
+      %td= link_to 'Edit', edit_address_path(address)
+      %td= link_to 'Destroy', address, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Address', new_address_path

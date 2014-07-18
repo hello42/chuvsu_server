@@ -20,3 +20,9 @@
 
       %li{:class => "#{'active' if current_page?(subjects_path)}"}
         = link_to "Предметы", subjects_path
+
+      %li{:class => "#{'active' if current_page?(phones_path)}"}
+        = link_to "Телефоны", phones_path
+
+      %li{:class => "#{'active' if current_page?(addresses_path)}"}
+        = link_to "Адреса", addresses_path

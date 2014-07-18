@@ -1,4 +1,8 @@
 ChuvsuServer::Application.routes.draw do
+  resources :addresses
+
+  resources :phones
+
   resources :universities
 
   resources :abiturients

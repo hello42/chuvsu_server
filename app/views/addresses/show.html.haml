@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @address.title
+%p
+  %b Address:
+  = @address.address
+%p
+  %b Image:
+  =image_tag @address.image
+
+= link_to 'Edit', edit_address_path(@address)
+\|
+= link_to 'Back', addresses_path
