@@ -43,6 +43,10 @@ set :linked_files, %w{config/database.yml}
 # Default value for linked_dirs is []
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
+set :puma_bind, %w(tcp://0.0.0.0:8080 unix:/tmp/puma_chuvsu.sock)
+set :puma_init_active_record, true
+
+
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 

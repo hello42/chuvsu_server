@@ -5,6 +5,8 @@ require 'capistrano/setup'
 require 'capistrano/deploy'
 require 'capistrano/puma'
 require 'whenever/capistrano'
+require 'capistrano/puma/monit'
+
 #require './config/boot'
 #require 'airbrake/capistrano'
 
