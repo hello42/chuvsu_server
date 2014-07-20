@@ -1,4 +1,4 @@
-threads 1, 6
+threads 2, 6
 workers 2
 
 on_worker_boot do
@@ -7,3 +7,11 @@ on_worker_boot do
   ActiveRecord::Base.connection.disconnect! rescue ActiveRecord::ConnectionNotEstablished
   ActiveRecord::Base.establish_connection(ENV["DATABASE_URL"] || YAML.load_file("#{cwd}/config/database.yml")[ENV["RAILS_ENV"]])
 end
+
+
+#rails_env = ENV['RAILS_ENV'] || 'development'
+#threads 4,4
+#bind  "unix:///data/apps/appname/shared/tmp/puma/appname-puma.sock"
+#pidfile "/data/apps/appname/current/tmp/puma/pid"
+#state_path "/data/apps/appname/current/tmp/puma/state"
+#activate_control_app
