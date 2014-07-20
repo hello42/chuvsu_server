@@ -16,6 +16,7 @@ set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default value
 
 
+set :puma_preload_app, false
 
 
 # Default branch is :master
@@ -42,8 +43,7 @@ set :linked_files, %w{config/database.yml}
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-
-set :puma_bind, %w(tcp://0.0.0.0:8080 unix:/tmp/puma_chuvsu.sock)
+set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"    #accept array for multi-bind
 set :puma_init_active_record, true
 
 
