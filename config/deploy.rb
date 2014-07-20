@@ -16,7 +16,6 @@ set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default value
 
 
-set :puma_state, "#{shared_path}/tmp/pids/puma.state"
 
 
 # Default branch is :master
@@ -39,7 +38,7 @@ set :deploy_to, '/var/www/chuvsu'
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml config/puma.rb}
+set :linked_files, %w{config/database.yml}
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
