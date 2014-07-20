@@ -1,5 +1,7 @@
 class ChangeTypeForNotificationToAbiturient < ActiveRecord::Migration
   def change
-   change_column :abiturients, :notification, :integer
+    remove_column :abiturients, :notification, :boolean
+    add_column :abiturients, :notification, :integer
+
   end
 end
