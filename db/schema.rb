@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140718090710) do
+ActiveRecord::Schema.define(version: 20140720181412) do
 
   create_table "abiturients", force: true do |t|
     t.string   "title"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20140718090710) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "notification"
+    t.integer  "notification"
   end
 
   create_table "abiturints", force: true do |t|

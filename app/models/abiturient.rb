@@ -9,7 +9,7 @@
 #  url          :string(255)
 #  created_at   :datetime
 #  updated_at   :datetime
-#  notification :boolean
+#  notification :integer
 #
 
 class Abiturient < ActiveRecord::Base
