@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 1.2'
 group :development do
   gem 'sqlite3'
   gem 'capistrano-rails'
-  gem 'capistrano3-puma', '0.6.0', github: "seuros/capistrano-puma"
+  gem 'capistrano3-puma', github: "seuros/capistrano-puma"
   gem 'capistrano-rbenv'
   gem 'annotate', '>=2.6.0'
   gem 'spring'
