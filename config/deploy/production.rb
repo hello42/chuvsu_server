@@ -25,11 +25,11 @@ server 'chuvsu.vtrave.com', user: 'apps', roles: %w{web db app}
 #
 # Global options
 # --------------
-set :ssh_options, {
-  keys: %w($HOME/.ssh/id_rsa),
-  forward_agent: false,
-  auth_methods: %w(publickey)
-}
+#set :ssh_options, {
+  #keys: %w($HOME/.ssh/id_rsa),
+  #forward_agent: false,
+  #auth_methods: %w(publickey)
+#}
 #
 # And/or per server (overrides global)
 # ------------------------------------

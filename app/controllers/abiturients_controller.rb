@@ -5,7 +5,8 @@ class AbiturientsController < InheritedResources::Base
 
   def permitted_params
     p = params.permit(:abiturient => [:title, :body, :url, :img, :notification])
-    p["abiturient"]["img"] ||= get_standart_image
+    p["abiturient"]["img"] = get_standart_image if p["abiturient"]["img"].empty?
+    p
   end
 
   def get_standart_image
