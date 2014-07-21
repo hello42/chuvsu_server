@@ -4,6 +4,11 @@ class AbiturientsController < InheritedResources::Base
   protected
 
   def permitted_params
-    params.permit(:abiturient => [:title, :body, :url, :img, :notification])
+    p = params.permit(:abiturient => [:title, :body, :url, :img, :notification])
+    p["abiturient"]["img"] ||= get_standart_image
+  end
+
+  def get_standart_image
+    "http://chuvsu.vtrave.com/standart/chuvsu.jpg"
   end
 end
