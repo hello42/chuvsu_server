@@ -45,6 +45,8 @@ set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"    #accept array for multi-bind
 set :puma_init_active_record, true
+set :puma_state, "#{shared_path}/tmp/pids/puma-production.state"
+
 
 
 # Default value for default_env is {}
