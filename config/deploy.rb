@@ -45,7 +45,7 @@ set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"    #accept array for multi-bind
 set :puma_init_active_record, true
-set :puma_state, "#{shared_path}/tmp/pids/puma-production.state"
+set :puma_state, "#{shared_path}/tmp/pids/puma-#{fetch(:stage)}.state"
 
 
 
@@ -66,6 +66,7 @@ namespace :deploy do
   end
 
   after :publishing, :restart
+  after :restart, "puma:restart"
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
