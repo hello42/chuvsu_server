@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: organisations
+#
+#  id         :integer          not null, primary key
+#  typeof     :string(255)
+#  name       :string(255)
+#  body       :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  typeof: MyString
+  name: MyString
+  body: MyText
+
+two:
+  typeof: MyString
+  name: MyString
+  body: MyText

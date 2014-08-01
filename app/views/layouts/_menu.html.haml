@@ -6,6 +6,9 @@
       %li{:class => "#{'active' if current_page?(pages_path)}"}
         = link_to "Страницы", pages_path
 
+      %li{:class => "#{'active' if current_page?(organisations_path)}"}
+        = link_to "Организации", organisations_path
+
       %li{:class => "#{'active' if current_page?(students_path)}"}
         = link_to "Студент", students_path
 

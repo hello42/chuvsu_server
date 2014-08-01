@@ -1,0 +1,10 @@
+= simple_form_for(@organisation) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :typeof
+    = f.input :name
+    = f.input :body
+
+  .form-actions
+    = f.button :submit

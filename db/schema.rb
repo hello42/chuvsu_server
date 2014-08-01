@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140801191707) do
+ActiveRecord::Schema.define(version: 20140801203000) do
 
   create_table "abiturients", force: true do |t|
     t.string   "title"
@@ -102,6 +102,14 @@ ActiveRecord::Schema.define(version: 20140801191707) do
     t.datetime "updated_at"
     t.string   "url"
     t.string   "image"
+  end
+
+  create_table "organisations", force: true do |t|
+    t.string   "typeof"
+    t.string   "name"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "pages", force: true do |t|
