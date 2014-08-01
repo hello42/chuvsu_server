@@ -7,8 +7,6 @@ ChuvsuServer::Application.routes.draw do
 
   resources :phones
 
-  resources :universities
-
   resources :abiturients
 
   resources :teachers
