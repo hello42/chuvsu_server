@@ -11,6 +11,10 @@ class NewsItemsController < ApplicationController
     @news_items = NewsItem.last(30)
   end
 
+  def last_id
+    @last = NewsItem.last
+  end
+
   # GET /news_items/1
   # GET /news_items/1.json
   def show

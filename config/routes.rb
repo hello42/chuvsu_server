@@ -14,6 +14,7 @@ ChuvsuServer::Application.routes.draw do
   resources :news_items
   resources :articles
   get 'news/last' => 'news_items#last'
+  get 'news/last_id' => 'news_items#last_id'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
