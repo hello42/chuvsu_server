@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Typeof:
+  = @student.typeof
+%p
+  %b Title:
+  = @student.title
+%p
+  %b Body:
+  = @student.body
+
+= link_to 'Edit', edit_student_path(@student)
+\|
+= link_to 'Back', students_path

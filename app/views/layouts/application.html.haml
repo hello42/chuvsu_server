@@ -11,10 +11,11 @@
     = csrf_meta_tag
 
   %body
-    .row
-      .offset2.span8
-        = render 'layouts/menu'
+    .container
+      .row
+        .span12
+          = render 'layouts/menu'
 
-        = yield
+          = yield
 
   = javascript_include_tag "application"
