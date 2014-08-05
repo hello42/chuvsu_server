@@ -11,6 +11,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'foreman'
 gem 'feed_parser'
 gem 'rest-client'
+gem 'addressable'
 gem 'pry'
 gem 'whenever', :require => false
 gem 'simple_form'
@@ -53,4 +54,6 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'watchr'
+  gem 'rev'
 end
