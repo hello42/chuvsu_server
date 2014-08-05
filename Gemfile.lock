@@ -108,6 +108,7 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    diff-lcs (1.2.5)
     dotenv (0.7.0)
     erb2haml (0.1.5)
       html2haml
@@ -162,6 +163,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
@@ -176,6 +178,10 @@ GEM
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.4)
+    pry (0.10.0)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     puma (2.6.0)
       rack (>= 1.1, < 2.0)
     quiet_assets (1.0.2)
@@ -206,6 +212,20 @@ GEM
     ref (1.0.5)
     responders (1.0.0)
       railties (>= 3.2, < 5)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    rspec-core (2.14.8)
+    rspec-expectations (2.14.5)
+      diff-lcs (>= 1.1.3, < 2.0)
+    rspec-mocks (2.14.6)
+    rspec-rails (2.14.2)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 2.14.0)
+      rspec-expectations (~> 2.14.0)
+      rspec-mocks (~> 2.14.0)
     ruby_parser (3.1.3)
       sexp_processor (~> 4.1)
     sass (3.3.0)
@@ -224,6 +244,7 @@ GEM
     simple_form (3.0.1)
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
+    slop (3.6.0)
     spring (1.1.2)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -292,9 +313,12 @@ DEPENDENCIES
   jquery-rails
   less-rails
   pg
+  pry
   puma
   quiet_assets
   rails (= 4.0.2)
+  rest-client
+  rspec-rails
   sass-rails (~> 4.0.0)
   sdoc
   seed_dump

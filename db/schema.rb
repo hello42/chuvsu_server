@@ -23,14 +23,6 @@ ActiveRecord::Schema.define(version: 20140801203000) do
     t.integer  "notification"
   end
 
-  create_table "abiturints", force: true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.boolean  "notification"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
     t.text     "body"
@@ -145,13 +137,6 @@ ActiveRecord::Schema.define(version: 20140801203000) do
     t.datetime "updated_at"
     t.integer  "day"
     t.integer  "group_id"
-  end
-
-  create_table "universities", force: true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end

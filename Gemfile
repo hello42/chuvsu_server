@@ -10,6 +10,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'foreman'
 gem 'feed_parser'
+gem 'rest-client'
+gem 'pry'
 gem 'whenever', :require => false
 gem 'simple_form'
 gem 'activeadmin', github: 'gregbell/active_admin'
@@ -47,4 +49,8 @@ end
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :test, :development do
+  gem 'rspec-rails'
 end
