@@ -8,11 +8,13 @@
     %th
     %th
     %th
+    %th
 
   - @addresses.each do |address|
     %tr
       %td= address.title
       %td= address.address
+      %td= address.coord
       %td=image_tag address.image
       %td= link_to 'Show', address
       %td= link_to 'Edit', edit_address_path(address)

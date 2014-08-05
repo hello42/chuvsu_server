@@ -7,8 +7,8 @@ class Geo
   end
 
   def self.generate_url addr
-    addr.gsub! " ", "+"
-    "http://geocode-maps.yandex.ru/1.x/?format=json&geocode=#{addr}"
+    norma_adr = addr.gsub " ", "+"
+    "http://geocode-maps.yandex.ru/1.x/?format=json&geocode=#{norma_adr}"
   end
 
   require 'addressable/uri'
