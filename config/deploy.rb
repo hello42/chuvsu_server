@@ -55,6 +55,7 @@ set :puma_state, "#{shared_path}/tmp/pids/puma-#{fetch(:stage)}.state"
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+
 namespace :deploy do
 
   desc 'Restart application'
