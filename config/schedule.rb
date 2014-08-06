@@ -5,8 +5,7 @@
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
-#
+# set :output, "/path/to/my/cron_log.log" #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
 #   runner "MyModel.some_method"
@@ -20,4 +19,8 @@
 # Learn more: http://github.com/javan/whenever
 every :hour do
   runner "NewsItem.update_news"
+end
+
+every 1.day, :at => '4:30 am' do
+  command "backup perform -t my_backup"
 end
