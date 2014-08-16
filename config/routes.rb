@@ -1,16 +1,10 @@
 ChuvsuServer::Application.routes.draw do
   resources :organisations
-
   resources :pages
-
   resources :students
-
   resources :addresses
-
   resources :phones
-
   resources :abiturients
-
   resources :teachers
   resources :subjects
   resources :groups
