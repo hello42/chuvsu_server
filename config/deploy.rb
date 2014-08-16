@@ -16,9 +16,6 @@ set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default value
 
 
-set :puma_preload_app, false
-
-
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 set :branch, "dev"
@@ -43,10 +40,9 @@ set :linked_files, %w{config/database.yml}
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"    #accept array for multi-bind
-set :puma_init_active_record, true
-set :puma_state, "#{shared_path}/tmp/pids/puma-#{fetch(:stage)}.state"
-
+#set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"    #accept array for multi-bind
+#set :puma_init_active_record, true
+#set :puma_state, "#{shared_path}/tmp/pids/puma-#{fetch(:stage)}.state"
 
 
 # Default value for default_env is {}
@@ -67,7 +63,7 @@ namespace :deploy do
   end
 
   after :publishing, :restart
-  after :restart, "puma:restart"
+  #after :restart, "puma:restart"
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do

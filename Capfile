@@ -3,9 +3,9 @@ require 'capistrano/setup'
 
 # Includes default deployment tasks
 require 'capistrano/deploy'
-require 'capistrano/puma'
+#require 'capistrano/puma'
 require 'whenever/capistrano'
-require 'capistrano/puma/monit'
+#require 'capistrano/puma/monit'
 
 #require './config/boot'
 #require 'airbrake/capistrano'
