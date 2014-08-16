@@ -58,7 +58,8 @@ namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+      #execute :touch, release_path.join('tmp/restart.txt')
+      execute "/var/www/chuvsu/current/bin/puma -C /var/www/chuvsu/shared/config/puma.rb"
     end
   end
 
