@@ -8,7 +8,8 @@
   = @page.title
 %p
   %b Body:
-  = @page.body
+  :markdown
+      #{ @page.body}
 
 = link_to 'Edit', edit_page_path(@page)
 \|

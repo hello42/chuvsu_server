@@ -5,7 +5,8 @@
   = @abiturient.title
 %p
   %b Body:
-  = @abiturient.body
+  :markdown
+    #{@abiturient.body}
 %p
   %b notification:
   = @abiturient.notification

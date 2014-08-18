@@ -8,7 +8,8 @@
   = @organisation.name
 %p
   %b Body:
-  = @organisation.body
+  :markdown
+    #{@organisation.body}
 
 = link_to 'Edit', edit_organisation_path(@organisation)
 \|
