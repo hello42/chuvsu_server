@@ -1,4 +1,5 @@
 ChuvsuServer::Application.routes.draw do
+  get "welcome/index"
   devise_for :users
   resources :organisations
   resources :pages
@@ -20,7 +21,7 @@ ChuvsuServer::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'home#welcome'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
