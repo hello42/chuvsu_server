@@ -27,8 +27,8 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'pg'
 group :development do
-  gem 'sqlite3'
   gem 'capistrano-rails'
   #gem 'capistrano3-puma', github: "seuros/capistrano-puma"
   gem 'capistrano-rbenv'
@@ -44,8 +44,10 @@ end
 
 
 gem 'puma'
+
+
 group :production do
-  gem 'pg'
+
 end
 
 group :doc do
@@ -62,3 +64,6 @@ end
 group :production do
   gem 'backup'
 end
+
+gem 'devise'
+gem 'seed_dump'
