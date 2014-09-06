@@ -15,7 +15,6 @@ gem 'addressable'
 gem 'pry'
 gem 'whenever', :require => false
 gem 'simple_form'
-gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'airbrake'
@@ -67,3 +66,6 @@ end
 
 gem 'devise'
 gem 'seed_dump'
+
+gem 'inherited_resources'
+

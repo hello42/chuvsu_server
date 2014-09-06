@@ -15,9 +15,6 @@ ChuvsuServer::Application.routes.draw do
   get 'news/last' => 'news_items#last'
   get 'news/last_id' => 'news_items#last_id'
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
