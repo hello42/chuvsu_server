@@ -18,7 +18,7 @@ set :rbenv_roles, :all # default value
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
-set :branch, "dev"
+set :branch, "master"
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/var/www/chuvsu'
