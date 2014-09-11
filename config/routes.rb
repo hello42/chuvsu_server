@@ -1,4 +1,6 @@
 ChuvsuServer::Application.routes.draw do
+  resources :annonces
+
   get "welcome/index"
   devise_for :users
   resources :organisations

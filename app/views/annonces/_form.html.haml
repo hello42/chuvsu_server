@@ -1,0 +1,11 @@
+= simple_form_for(@annonce) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :date
+    = f.input :body
+    = f.input :notification
+
+  .form-actions
+    = f.button :submit

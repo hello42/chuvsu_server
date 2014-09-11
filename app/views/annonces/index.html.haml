@@ -1,0 +1,25 @@
+%h1 Listing annonces
+
+%table
+  %tr
+    %th Title
+    %th Date
+    %th Body
+    %th Notification
+    %th
+    %th
+    %th
+
+  - @annonces.each do |annonce|
+    %tr
+      %td= annonce.title
+      %td= annonce.date
+      %td= annonce.body
+      %td= annonce.notification
+      %td= link_to 'Show', annonce
+      %td= link_to 'Edit', edit_annonce_path(annonce)
+      %td= link_to 'Destroy', annonce, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Annonce', new_annonce_path
