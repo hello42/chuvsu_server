@@ -9,7 +9,9 @@
 #  notification :boolean
 #  created_at   :datetime
 #  updated_at   :datetime
+#  image        :string(255)
 #
 
 class Annonce < ActiveRecord::Base
+  mount_uploader :image, AnonsImageUploader
 end

@@ -9,6 +9,7 @@
 #  notification :boolean
 #  created_at   :datetime
 #  updated_at   :datetime
+#  image        :string(255)
 #
 
 require 'rails_helper'

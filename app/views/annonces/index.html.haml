@@ -9,6 +9,7 @@
     %th
     %th
     %th
+    %th
 
   - @annonces.each do |annonce|
     %tr
@@ -16,6 +17,7 @@
       %td= annonce.date
       %td= annonce.body
       %td= annonce.notification
+      %td= annonce.image
       %td= link_to 'Show', annonce
       %td= link_to 'Edit', edit_annonce_path(annonce)
       %td= link_to 'Destroy', annonce, :method => :delete, :data => { :confirm => 'Are you sure?' }

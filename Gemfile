@@ -68,4 +68,5 @@ gem 'devise'
 gem 'seed_dump'
 
 gem 'inherited_resources'
-
+gem 'carrierwave'
+gem 'rmagick'
