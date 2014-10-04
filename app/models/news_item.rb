@@ -14,6 +14,8 @@
 class NewsItem < ActiveRecord::Base
   include ActionView::Helpers::SanitizeHelper
 
+  COUNT_LAST_NEWS = ( Rails.env.production? )?  30 : 3
+
   validates :title, presence: true
   validates :body, presence: true
   validates :url, presence: true
@@ -32,6 +34,10 @@ class NewsItem < ActiveRecord::Base
     rss_feed.items.reverse.each do |item|
       NewsItem.create title: item.title, image: get_image(item), body: clear_html(item.description), updated_at: parse_date(item), url: item.link unless is_dublicate?(item.link)
     end
+  end
+
+  def self.last_items
+    last COUNT_LAST_NEWS
   end
 
 

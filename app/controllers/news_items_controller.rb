@@ -8,7 +8,7 @@ class NewsItemsController < ApplicationController
   end
 
   def last
-    @news_items = NewsItem.last(30)
+    @news_items = NewsItem.last_items
   end
 
   def last_id

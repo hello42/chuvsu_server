@@ -14,4 +14,11 @@
 
 class Annonce < ActiveRecord::Base
   mount_uploader :image, AnonsImageUploader
+
+
+  def self.get_in_future
+    #fix_me return все будущие
+    all
+  end
+
 end
