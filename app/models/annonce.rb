@@ -17,8 +17,7 @@ class Annonce < ActiveRecord::Base
 
 
   def self.get_in_future
-    #fix_me return все будущие
-    all
+    Annonce.where("date >= ?", DateTime.now)
   end
 
 end
