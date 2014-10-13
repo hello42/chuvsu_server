@@ -4,7 +4,7 @@ class AnnoncesController < ApplicationController
   # GET /annonces
   # GET /annonces.json
   def index
-    @annonces = Annonce.all
+    @annonces = Annonce.get_in_future
   end
 
   # GET /annonces/1
