@@ -17,7 +17,7 @@ class Annonce < ActiveRecord::Base
 
 
   def self.get_in_future
-    Annonce.where("date >= ?", DateTime.now)
+    Annonce.where("date >= ?", DateTime.now).order("date")
   end
 
 end
