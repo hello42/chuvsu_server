@@ -17,11 +17,11 @@
       %td= annonce.date
       %td= annonce.body
       %td= annonce.notification
-      %td= annonce.image
-      %td= link_to 'Show', annonce
-      %td= link_to 'Edit', edit_annonce_path(annonce)
-      %td= link_to 'Destroy', annonce, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td=image_tag annonce.image
+      %td= link_to 'Показать', annonce
+      %td= link_to 'Редактировать', edit_annonce_path(annonce)
+      %td= link_to 'Удалить', annonce, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Annonce', new_annonce_path
+= link_to 'Создать', new_annonce_path
